@@ -9,5 +9,5 @@ branches:
 before_script:
   - npm i -g firebase-tools@latest
 script:
-  - firebase use default --token $FIREBASE_DEPLOY_KEY_PROD
+  - firebase use default --token $FIREBASE_DEPLOY_KEY
   - firebase deploy -m "build $TRAVIS_BUILD_NUMBER" --non-interactive --force --token $FIREBASE_DEPLOY_KEY
