@@ -1,4 +1,4 @@
-# Starter project for Tanam CMS
+# Starter project for [Tanam CMS](https://github.com/oddbit/tanam)
 Fork this repository and update [`.firebaserc`](.firebaserc) with your own project ID.
 
 After that, follow the instructions on setting up your Firebase project as described in
