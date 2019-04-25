@@ -1,0 +1,28 @@
+.deploy_firebase_template: &deploy_firebase_def
+  image: evenbit/firebase
+  stage: deploy
+  cache:
+    paths:
+      - functions/node_modules/
+  before_script:
+    - node --version
+    - firebase --version
+    - npm --prefix angular install
+  after_script:
+    - firebase deploy -m "Gitlab pipeline $CI_PIPELINE_ID, build $CI_JOB_ID" --non-interactive --force --token $FIREBASE_DEPLOY_KEY
+
+deploy_firebase_production:
+  <<: *deploy_firebase_def
+  environment: Production
+  only:
+    - master
+  script:
+    - firebase use $FIREBASE_PRODUCTION_PROJECT_ID --token $FIREBASE_DEPLOY_KEY
+
+deploy_firebase_development:
+  <<: *deploy_firebase_def
+  environment: Development
+  only:
+    - develop
+  script:
+    - firebase use $FIREBASE_DEVELOP_PROJECT_ID --token $FIREBASE_DEPLOY_KEY
