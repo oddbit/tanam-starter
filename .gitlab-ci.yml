@@ -7,7 +7,7 @@
   before_script:
     - node --version
     - firebase --version
-    - npm --prefix angular install
+    - npm --prefix functions install
   after_script:
     - firebase deploy -m "Gitlab pipeline $CI_PIPELINE_ID, build $CI_JOB_ID" --non-interactive --force --token $FIREBASE_DEPLOY_KEY
 
