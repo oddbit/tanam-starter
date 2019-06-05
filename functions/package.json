@@ -14,8 +14,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "firebase-admin": "latest",
-    "firebase-functions": "latest",
+    "firebase-admin": "^7.4.0",
+    "firebase-functions": "^2.3.1",
     "tanam": "latest"
   },
   "devDependencies": {
