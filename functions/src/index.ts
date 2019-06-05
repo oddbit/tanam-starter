@@ -3,7 +3,7 @@ import * as tanam from 'tanam';
 
 tanam.initializeApp({
     users: {
-        "your.email@gmail.com": "owner",
+        "your.email@gmail.com": "superAdmin",
     },
     firebaseApp: {
         apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
