@@ -9,6 +9,8 @@
     - firebase --version
     - npm --prefix functions install
   after_script:
+    - firebase functions:config:set cache.max_age=$BROWSER_CACHE_TIME --token $FIREBASE_DEPLOY_KEY
+    - firebase functions:config:set cache.s_max_age=$CDN_CACHE_TIME --token $FIREBASE_DEPLOY_KEY
     - firebase deploy -m "Gitlab pipeline $CI_PIPELINE_ID, build $CI_JOB_ID" --non-interactive --force --token $FIREBASE_DEPLOY_KEY
 
 deploy_firebase_production:
